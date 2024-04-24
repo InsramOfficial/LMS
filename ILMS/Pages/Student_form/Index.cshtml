@@ -1,0 +1,252 @@
+﻿@page
+@model ILMS.Pages.Student_form.IndexModel
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!----======== CSS ======== -->
+    <link href="~/css/student form.css" rel="stylesheet" />
+    <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  
+    <title>Responsive Regisration Form </title>
+</head>
+<body>
+    <div class="container">
+        <header>Registration</header>
+
+        <form method="post" asp-page="Index" asp-page-handler="Create">
+            <div class="form first">
+                <div class="details personal">
+                    <span class="title">Addmission Details</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                                <label>Degree*</label>
+                            <select type="text" class="form-control" required name="Program_id" asp-items="@(new SelectList(Model.P,"id","Name"))">
+                                </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Applicant Name*</label>
+                            <input type="text" class="form-control" required name="name" placeholder="Candidate full Name(Max 50 Characters)">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Mobile_Number*</label>
+                            <input type="tel" class="form-control" required name="Mobile_Number" placeholder="034........... ">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Student_Cnic</label>
+                            <input type="text" class="form-control" required name="stu_Cnic" placeholder="________">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Date_of_Birth</label>
+                            <input type="date" class="form-control" required name="Date_of_Birth">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Blood_group</label>
+                            <input type="text" class="form-control" required name="blood_group"  placeholder="e.g B+ ,O+,">
+                        </div>
+                        <div class="input-field">
+                            <label>Hostal</label>
+                            <select type="text" class="form-control" required name="Hostal">
+                                <option selected onsubmit="Hostal">Yes</option>
+                                <option selected onsubmit="Hostal">No</option>
+                            </select>
+                        </div>
+                        <div class="input-field">
+                            <label>Nationality</label>
+                            <input type="text" class="form-control" required name="Nationality" placeholder="Pakistani">
+                        </div>
+
+                        
+                    </div>
+                </div>
+
+                <div class="details ID">
+                    <span class="title">Personal Details</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Father_Name</label>
+                            <input type="text" class="form-control" required name="Father_Name" placeholder="..........">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Father_Cnic</label>
+                            <input type="text" class="form-control" required name="Fa_Cnic" placeholder="__________________">
+                        </div>
+                        <div class="input-field">
+                            <label>Email</label>
+                            <input type="text" class="form-control" required name="Email" placeholder="e.g :insram@gmail.com">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Other_Email</label>
+                            <input type="text" class="form-control" required name="Other_Email" placeholder="e.g :insram@gmail.com">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Gender</label>
+                            <select type="text" class="form-control" required name="Gender">
+                                
+                                <option selected onsubmit="Gender">Male</option>
+                                <option selected onsubmit="Gender">Female</option>
+                                <option selected onsubmit="Gender">Other</option>
+
+                            </select>
+                        </div>
+                        <div class="input-field">
+                            <label>Other_Mobile_Number</label>
+                            <input type="tel" class="form-control" required name="Other_Mobile_Number" placeholder="03-------------">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Gardian_name</label>
+                            <input type="text" class="form-control" required name="Gardian_name" placeholder="Father Name">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Gardian_Cnic</label>
+                            <input type="text" class="form-control" required name="Gardian_Cnic" placeholder="Enter Cnic ">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Gardian_Mobile_number</label>
+                            <input type="text" class="form-control" required name="Gardian_number" placeholder="Enter Guardian Name">
+                        </div>
+
+
+                        <div class="input-field">
+                            <label>Guardian_Address</label>
+                            <input type="text" class="form-control" required name="Guardian_Address" placeholder="Enter Guardian Address">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Marital_status</label>
+                            <select type="text" class="form-control" required name="marital_status">
+                                <option selected onsubmit="marital_status">Single</option>
+                                <option selected onsubmit="marital_status">Married</option>
+                            </select>
+                        </div>
+                        <div class="input-field">
+                            <label>Country</label>
+                            <select type="text" class="form-control" required name="Country_id" asp-items="@(new SelectList(Model.c,"id","Name"))">
+                                <option selected disabled>----------select one of these----------</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Religion</label>
+                            <select type="text" class="form-control" required name="Program_id" asp-items="@(new SelectList(Model.r,"id","Name"))">
+                                <option selected disabled>------------select one of these-------------</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Additional Information</label>
+                            <textarea type="text" class="form-control" required name="additional information"></textarea>
+                        </div>
+                    
+                    </div>
+
+                    <button class="nextBtn">
+                        <span class="btnText">Next</span>
+                        <i class="uil uil-navigator"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="form second">
+                <div class="details address">
+                    <span class="title">Education Background</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Matric_school_name</label>
+                            <input type="text" class="form-control" required name="Matric_school_name" placeholder="--------------">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Matric_marks</label>
+                            <input type="text" class="form-control" required name="Matric_marks" placeholder="--------------">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Clg_name</label>
+                            <input type="text" class="form-control" required name="clg_name" placeholder="--------------">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Intermediate_marks</label>
+                            <input type="text" class="form-control" required name="Intermediate_marks" placeholder="--------------">
+                        </div>
+
+                        
+                    </div>
+                </div>
+
+                <div class="details family">
+                    <span class="title">Documents Details</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Domicile_district</label>
+                            <input type="text" class="form-control" required name="domicile_district" placeholder="e.g : kotli">
+                        </div>
+
+                     
+                    </div>
+
+                    <div class="buttons">
+                        <div class="backBtn">
+                            <i class="uil uil-navigator"></i>
+                            <span class="btnText">Back</span>
+                        </div>
+
+                        <div class="">
+
+                        </div>
+                        <button  type="submit" class="">
+                            <span class="btnText">Submit</span>
+                            <i class="uil uil-navigator"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!--<script src="script.js"></script>-->
+   <script type="text/javascript">
+
+        const form = document.querySelector("form"),
+            nextBtn = form.querySelector(".nextBtn"),
+            backBtn = form.querySelector(".backBtn"),
+            allInput = form.querySelectorAll(".first input");
+
+
+        nextBtn.addEventListener("click", () => {
+            allInput.forEach(input => {
+                if (input.value != "") {
+                    form.classList.add('secActive');
+                } else {
+                    form.classList.remove('secActive');
+                }
+            })
+        })
+
+        backBtn.addEventListener("click", () => form.classList.remove('secActive'));
+
+       </script>
+</body>
+</html>

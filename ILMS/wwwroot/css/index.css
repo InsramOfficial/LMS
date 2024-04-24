@@ -1,0 +1,33 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120vh;
+    background-image: linear-gradient(to bottom,transparent 55%,black),url(https://images.pexels.com/photos/2517748/pexels-photo-2517748.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-size: cover;
+    background-position: center center;
+    background-image:image-set(100%);
+}
+
+.content h2 {
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 130px;
+}
+
+    .content h2 span {
+        -webkit-text-fill-color: transparent;
+    }
+
+@media (max-width:991px) {
+    .content h2 {
+        font-size: 70px;
+    }
+}
